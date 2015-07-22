@@ -1,0 +1,29 @@
+h1, form, ul, li{
+	text-align: center;
+	list-style-type: none;
+	margin: 0;
+}
+
+html{
+	background-color: #F8F8F8
+}
+
+h1{
+	margin-bottom: 20px;
+}
+
+#submit:hover{
+	-webkit-animation-name: spin;
+	        animation-name: spin;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+@keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
