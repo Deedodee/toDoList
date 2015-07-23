@@ -1,15 +1,20 @@
+* {
+margin: 0;
+padding: 0;
+}
+
 h1, form, ul, li{
 	text-align: center;
 	list-style-type: none;
 	margin: 0;
 }
 
-html{
-	background-color: #F8F8F8
-}
-
 h1{
 	margin-bottom: 20px;
+}
+
+li {
+    display: inline;
 }
 
 #submit:hover{

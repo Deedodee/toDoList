@@ -1,0 +1,53 @@
+/*Nav Styles*/
+
+nav{
+	background: -webkit-linear-gradient(#32B7FE, #0068FE);
+	width: 100%;
+	height: 50px;
+}
+
+#logo{
+	width: 50px;
+	height: 50px;
+	background-image: url(../img/d.png);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.subLi{
+	background: -webkit-linear-gradient(#32B7FE, #0068FE);
+}
+
+nav ul li{
+	position: relative;
+	float: left;
+	border-right: 2px solid #2C6D9C;
+}
+
+nav ul li a{
+	display: inline-block;
+	height: 50px;
+	width: 90px;
+	line-height: 45px;
+	color: #DCE8F4;
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+nav ul li a:hover{
+	background: -webkit-radial-gradient(#3393F9, #006EFF);
+	background-size: 100%;
+}
+
+nav ul ul{
+	clear: both;
+	position: absolute;
+	left: -9999px;
+}
+
+nav ul li:hover ul{
+	left: 0;
+	z-index: 200;
+}
