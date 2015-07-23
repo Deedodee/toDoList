@@ -21,7 +21,7 @@ h1{
 	text-align: center;
 }
 
-#mainUl li{
+#mainUl .new{
 	width: 90%;
 	background: -webkit-linear-gradient(#F06D2C, #EE2A26);
 	border-radius: 5px;
@@ -34,7 +34,20 @@ h1{
 	position: relative;
 }
 
-#mainUl li:hover{
+#mainUl .done{
+	width: 90%;
+	background: -webkit-linear-gradient(#B2D173, #488F54);
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top: 15px;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+}
+
+#mainUl #container:hover .new{
 	-webkit-animation-name: toDoHover;
 	        animation-name: toDoHover;
 	-webkit-animation-duration: 1s;
@@ -43,12 +56,31 @@ h1{
     		animation-fill-mode: forwards;
 }
 
+#mainUl #container:hover #ul2{
+	z-index: 9999;
+}
+
+#ul2{
+	position: relative;
+	left: 490px;
+	top: -41px;
+	z-index: -5;
+	transition: 0s z-index;
+	transition-delay: .5s;
+}
+
 #mainUl ul li{
 	width: 40px;
 	height: 40px;
 	background-size: 100%;
 	margin: 0;
 	border: none;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-left: 10px;
 }
 
 #mainUl ul li:hover{
@@ -58,13 +90,14 @@ h1{
 
 #input{
 	background: -webkit-radial-gradient(#B2D173, #488F54) !important;
+	line-height: 40px;
 }
 
 #submit:hover{
 	-webkit-animation-name: spin;
 	        animation-name: spin;
-	-webkit-animation-duration: 2s;
-	        animation-duration: 2s;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
 }
 
 @-webkit-keyframes spin {
@@ -77,10 +110,10 @@ h1{
 }
 
 @-webkit-keyframes toDoHover{
-	from {left: 0px;}
-	to {left: 500px;}
+	from {right: 0px;}
+	to {right: 160px;}
 }
 @keyframes toDoHover{
-	from {left: 0px;}
-	to {left: 500px;}
+	from {right: 0px;}
+	to {right: 160px;}
 }
