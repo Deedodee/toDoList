@@ -13,10 +13,26 @@ nav{
 	background-size: 85%;
 	background-repeat: no-repeat;
 	background-position: center;
+	border: none;
+}
+
+#logo:hover{
+	-webkit-animation-name: spina;
+	        animation-name: spina;
+	-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
 }
 
 .subLi{
 	background: -webkit-linear-gradient(#32B7FE, #0068FE);
+}
+
+#homeLink{
+	border-left: 2px solid #2C6D9C;
 }
 
 nav ul li{
@@ -50,4 +66,33 @@ nav ul ul{
 nav ul li:hover ul{
 	left: 0;
 	z-index: 200;
+	animation: fadeIn 0.5s;
+	-webkit-animation: fadeIn 0.5s;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+@keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spina {
+    from {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+    to {-webkit-transform: rotate(0deg);transform: rotate60deg);}
+}
+@keyframes spina {
+    from {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+    to {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@-webkit-keyframes fadeIn{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes fadeIn{
+	from {opacity: 0;}
+	to {opacity: 1;}
 }
