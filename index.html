@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Home</title>
+	<title>To Do List</title>
+	<script type="text/javascript" src="js/nav.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	
 </head>
 <body>
 	<nav>
@@ -19,6 +20,12 @@
 			</li>
 			<li><a href="index.html">Contact</a></li>			
 		</ul></nav>
-
+	<h1>What are you going to do?</h1>
+	<form name="toDoForm" id="toDoForm">
+		My item: <input id="value" type="text" placeholder="Enter in here!">
+		<input type="submit" id="submit">
+	</form>
+	<ul id="mainUl"></ul>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

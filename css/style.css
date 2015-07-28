@@ -3,10 +3,6 @@ margin: 0;
 padding: 0;
 }
 
-html{
-	background-color: #8ACFF0;
-}
-
 h1, form, ul, li{
 	text-align: center;
 	list-style-type: none;
@@ -45,6 +41,10 @@ h1{
 	height: 40px;
 	line-height: 40px;
 	position: relative;
+}
+
+#container{
+	height: 42px;
 }
 
 #mainUl #container:hover .new{
@@ -110,10 +110,10 @@ h1{
 }
 
 @-webkit-keyframes toDoHover{
-	from {right: 0px;}
-	to {right: 160px;}
+	from {right: 0%;}
+	to {right: 16%;}
 }
 @keyframes toDoHover{
-	from {right: 0px;}
-	to {right: 160px;}
+	from {right: 0%;}
+	to {right: 16%;}
 }

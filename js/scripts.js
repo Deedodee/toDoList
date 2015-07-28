@@ -14,6 +14,7 @@ form.addEventListener("submit", function (evt) {
 
 			var li = document.createElement("li");
 			li.setAttribute("class", "new");
+			li.setAttribute("id", i)
 			li.textContent = items[i];
 			div.appendChild(li);
 
@@ -35,8 +36,16 @@ form.addEventListener("submit", function (evt) {
 
 			var input = document.createElement("input");
 			input.setAttribute("type", "checkbox");
-			input.setAttribute("id", "check");
+			input.setAttribute("id", "input");
+			input.setAttribute("name", "myCheckbox");
 			li2.appendChild(input);
+
+			input.addEventListener("click", function () {
+			var x = input.parentElement.parentElement.parentElement;
+			
+			})
 		}
 	document.getElementById("value").value = "";
 });
+
+//crystal castles

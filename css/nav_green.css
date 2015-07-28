@@ -1,0 +1,102 @@
+/*Nav Styles*/
+
+nav{
+	background: -webkit-linear-gradient(#82A33A, #96C310);
+	width: 100%;
+	height: 50px;
+}
+
+html{
+	background-color: #83E291;
+}
+
+#logo{
+	width: 50px;
+	height: 50px;
+	background-image: url(../img/d.png);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+}
+
+#logo:hover{
+	-webkit-animation-name: spina;
+	        animation-name: spina;
+	-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+}
+
+.subLi{
+	background: -webkit-linear-gradient(#82A33A, #96C310);
+}
+
+#homeLink{
+	border-left: 2px solid #607822;
+}
+
+nav ul li{
+	position: relative;
+	float: left;
+	border-right: 2px solid #607822;
+}
+
+nav ul li a{
+	display: inline-block;
+	height: 50px;
+	width: 90px;
+	line-height: 45px;
+	color: #DCE8F4;
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+nav ul li a:hover{
+	background: -webkit-radial-gradient(#92BE0F, #7EA13B);
+	background-size: 100%;
+}
+
+nav ul ul{
+	clear: both;
+	position: absolute;
+	left: -9999px;
+}
+
+nav ul li:hover ul{
+	left: 0;
+	z-index: 200;
+	animation: fadeIn 0.5s;
+	-webkit-animation: fadeIn 0.5s;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+@keyframes spin {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spina {
+    from {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+    to {-webkit-transform: rotate(0deg);transform: rotate60deg);}
+}
+@keyframes spina {
+    from {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+    to {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@-webkit-keyframes fadeIn{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes fadeIn{
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
