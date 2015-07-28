@@ -2,19 +2,16 @@
 var form = document.getElementById("toDoForm");
 var ul = document.getElementById("mainUl");
 var items = [];
-form.addEventListener("submit", function (evt) {
-	var toDo = document.getElementById("value").value;
-	items.push(toDo);
-	evt.preventDefault();
-		ul.textContent = "";
+
+function todo() {
+	ul.textContent = "";
 		for (var i = 0; i < items.length; i++){
 			var div = document.createElement("div");
-			div.setAttribute("id", "container");
+			div.setAttribute("class", "container");
 			ul.appendChild(div);
 
 			var li = document.createElement("li");
 			li.setAttribute("class", "new");
-			li.setAttribute("id", i)
 			li.textContent = items[i];
 			div.appendChild(li);
 
@@ -25,6 +22,19 @@ form.addEventListener("submit", function (evt) {
 			var vdelete = document.createElement("li");
 			vdelete.style.backgroundImage = "url(img/delete.png)";
 			ul2.appendChild(vdelete);
+
+			vdelete.addEventListener("click", function () {
+				var ans = confirm("Are you sure you want to delete?");
+				if (ans == true) {
+					var index = this.parentElement.parentElement.childNodes[0];
+					index = items.indexOf(index.textContent);
+					if (index > -1) {
+				   		items.splice(index, 1);
+				   		ul.textContent = "";
+				   		todo();
+					}
+				};
+			})
 
 			var edit = document.createElement("li");
 			edit.style.backgroundImage = "url(img/edit.png)";
@@ -39,12 +49,14 @@ form.addEventListener("submit", function (evt) {
 			input.setAttribute("id", "input");
 			input.setAttribute("name", "myCheckbox");
 			li2.appendChild(input);
-
-			input.addEventListener("click", function () {
-			var x = input.parentElement.parentElement.parentElement;
-			
-			})
 		}
+}
+
+form.addEventListener("submit", function (evt) {
+	var toDo = document.getElementById("value").value;
+	items.push(toDo);
+	evt.preventDefault();
+		todo();
 	document.getElementById("value").value = "";
 });
 
