@@ -57,16 +57,35 @@ h1{
 }
 
 #mainUl .container:hover #ul2{
+	visibility: visible;
 	z-index: 9999;
 }
 
 #ul2{
 	position: relative;
-	left: 490px;
+	left: 71%;
+	top: -61px;
+	z-index: -5;
+	transition: 0s z-index;
+	transition-delay: .5s;
+	visibility: hidden;
+	width: 500px;
+}
+
+#ul22{
+	position: relative;
+	left: 71%;
 	top: -41px;
 	z-index: -5;
 	transition: 0s z-index;
 	transition-delay: .5s;
+	visibility: hidden;
+	width: 500px;
+}
+
+#mainUl .container:hover #ul22{
+	visibility: visible;
+	z-index: 9999;
 }
 
 #mainUl ul li{
@@ -100,6 +119,41 @@ h1{
 	        animation-duration: 1s;
 }
 
+#editForm{
+	position: relative;
+	visibility: hidden;
+	top: -31px;
+	z-index: 999px;
+}
+
+#noAnimation{
+	-webkit-animation: none !important;
+	animation: none !important;
+}
+
+.noAnimation{
+	-webkit-animation: none !important;
+	animation: none !important;
+}
+
+#mainUl .container:hover .done{
+	-webkit-animation-name: toDoHover2;
+	        animation-name: toDoHover2;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+    		animation-fill-mode: forwards;
+}
+
+#mainUl .container:hover .done{
+	-webkit-animation-name: toDoHover2;
+	        animation-name: toDoHover2;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+    		animation-fill-mode: forwards;
+}
+
 @-webkit-keyframes spin {
     from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
     to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
@@ -116,4 +170,13 @@ h1{
 @keyframes toDoHover{
 	from {right: 0%;}
 	to {right: 16%;}
+}
+
+@-webkit-keyframes toDoHover2{
+	from {right: 0%;}
+	to {right: 13%;}
+}
+@keyframes toDoHover2{
+	from {right: 0%;}
+	to {right: 13%;}
 }
