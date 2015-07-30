@@ -3,6 +3,7 @@ var form = document.getElementById("toDoForm");
 var ul = document.getElementById("mainUl");
 var items = [];
 var done = [];
+var cats0 = [];
 
 //The basis of this website/app
 function todo() {
@@ -38,6 +39,23 @@ function todo() {
 			ul2.setAttribute("id", "ul2");
 			div.appendChild(ul2);
 
+			var cats = document.createElement("li");
+			cats.style.backgroundImage = "url(img/cat.png)";
+			ul2.appendChild(cats);
+
+			cats.addEventListener("click", function () {
+				var liNew = this.parentElement.parentElement.childNodes[0]; //li.new
+				liNew.setAttribute("class", "cat");
+				var index0 = items.indexOf(liNew.textContent);
+				if (index0 > -1) {
+				   	items.splice(index0, 1);
+				   	cats0.push(liNew.textContent);
+				   	todo();
+				   	todone();
+				   	tocats();
+				}
+			})
+
 			var vdelete = document.createElement("li");
 			vdelete.style.backgroundImage = "url(img/delete.png)";
 			ul2.appendChild(vdelete);
@@ -51,6 +69,8 @@ function todo() {
 				   		items.splice(index, 1);
 				   		ul.textContent = "";
 				   		todo();
+				   		todone();
+				   		tocats();
 					}
 				};
 			})
@@ -77,6 +97,8 @@ function todo() {
 					items.splice(orig, 1, toDo2);
 					ul.textContent = "";
 				   	todo();
+				   	todone();
+				   	tocats();
 				});
 			})
 
@@ -99,6 +121,7 @@ function todo() {
 				   	done.push(liNew.textContent);
 				   	todo();
 				   	todone();
+				   	tocats();
 				}
 			})
 		}
@@ -136,6 +159,8 @@ function todone() {
 				   		done.splice(index, 1);
 				   		ul.textContent = "";
 				   		todo();
+				   		todone();
+				   		tocats();
 					}
 				};
 			})
@@ -160,7 +185,64 @@ function todone() {
 				   	items.push(liNew.textContent);
 				   	todo();
 				   	todone();
+				   	tocats();
 				}
+			})
+		}
+}
+
+function tocats() {
+		for (var i = 0; i < cats0.length; i++){
+			var div = document.createElement("div");
+			div.setAttribute("class", "container");
+			ul.appendChild(div);
+
+			var li = document.createElement("li");
+			li.setAttribute("class", "cat");
+			div.appendChild(li);
+
+			var b = document.createElement("b");
+			b.textContent = cats0[i];
+			li.appendChild(b);
+
+			var ul2 = document.createElement("ul");
+			ul2.setAttribute("id", "ul22");
+			div.appendChild(ul2);
+
+			var cats = document.createElement("li");
+			cats.style.backgroundImage = "url(img/cat.png)";
+			ul2.appendChild(cats);
+
+			cats.addEventListener("click", function () {
+				var liNew = this.parentElement.parentElement.childNodes[0]; //li.new
+				liNew.setAttribute("class", "cat");
+				var index0 = cats0.indexOf(liNew.textContent);
+				if (index0 > -1) {
+				   	cats0.splice(index0, 1);
+				   	items.push(liNew.textContent);
+				   	todo();
+				   	todone();
+				   	tocats();
+				}
+			})
+
+			var vdelete = document.createElement("li");
+			vdelete.style.backgroundImage = "url(img/delete.png)";
+			ul2.appendChild(vdelete);
+
+			vdelete.addEventListener("click", function () {
+				var ans = confirm("Are you sure you want to delete?");
+				if (ans == true) {
+					var index = this.parentElement.parentElement.childNodes[0]; //li.new
+					index = cats0.indexOf(index.textContent);
+					if (index > -1) {
+				   		cats0.splice(index, 1);
+				   		ul.textContent = "";
+				   		todo();
+				   		todone();
+				   		tocats();
+					}
+				};
 			})
 		}
 }
@@ -174,6 +256,8 @@ form.addEventListener("submit", function (evt) {
 	} else {
 	items.push(toDo);
 		todo();
+		todone();
+		tocats();
 	document.getElementById("value").value = "";
 	}
 });

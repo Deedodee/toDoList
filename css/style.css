@@ -43,6 +43,21 @@ h1{
 	position: relative;
 }
 
+#mainUl .cat{
+	width: 90%;
+	background-image: url(../img/cat_background.png), -webkit-gradient(linear,  left top,  left bottom, color-stop(0%, rgba(255, 0, 0, 1)), color-stop(15%, rgba(255, 255, 0, 1)), color-stop(30%, rgba(0, 255, 0, 1)), color-stop(50%, rgba(0, 255, 255, 1)), color-stop(65%, rgba(0, 0, 255, 1)), color-stop(80%, rgba(255, 0, 255, 1)), color-stop(100%, rgba(255, 0, 0, 1)));;
+	background-repeat: repeat-x !important;
+	background-size: contain !important;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top: 15px;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+}
+
 .container{
 	height: 42px;
 }
@@ -63,18 +78,18 @@ h1{
 
 #ul2{
 	position: relative;
-	left: 71%;
+	left: 69%;
 	top: -61px;
 	z-index: -5;
 	transition: 0s z-index;
-	transition-delay: .5s;
+	transition-delay: .8s;
 	visibility: hidden;
 	width: 500px;
 }
 
 #ul22{
 	position: relative;
-	left: 71%;
+	left: 69%;
 	top: -41px;
 	z-index: -5;
 	transition: 0s z-index;
@@ -145,7 +160,7 @@ h1{
     		animation-fill-mode: forwards;
 }
 
-#mainUl .container:hover .done{
+#mainUl .container:hover .cat{
 	-webkit-animation-name: toDoHover2;
 	        animation-name: toDoHover2;
 	-webkit-animation-duration: 1s;
